@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oghenero Okikie | Brand &amp; Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0f3;--ink:#1a1d29;--mute:#5b6172;--line:#cfd3dc;--card:#fff;--acc:#2d3bf0;--acc-ink:#fff;--sun:#f4b63f;
+--d:'Bricolage Grotesque',system-ui,sans-serif;--b:'Newsreader',Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14161f;--ink:#eceef4;--mute:#a1a7b8;--line:#2d3142;--card:#1c1f2c;--acc:#8c97ff;--acc-ink:#12142a}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14161f;--ink:#eceef4;--mute:#a1a7b8;--line:#2d3142;--card:#1c1f2c;--acc:#8c97ff;--acc-ink:#12142a}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.6 var(--b)}
+a{color:inherit}.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font:700 15px var(--d)}
+header nav{display:flex;gap:22px;flex-wrap:wrap}header a{text-decoration:none}header a:hover{color:var(--acc)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.hero{padding:56px 0 72px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+h1{font:800 clamp(44px,8vw,96px)/.95 var(--d);letter-spacing:-.03em;margin:0 0 24px}
+.lead{max-width:34em;color:var(--mute);margin:0 0 28px}
+.btn{display:inline-block;background:var(--acc);color:var(--acc-ink);font:700 16px var(--d);padding:14px 24px;border-radius:999px;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+.mark{width:100%;max-width:380px;justify-self:center}
+h2{font:800 clamp(30px,5vw,48px)/1.05 var(--d);letter-spacing:-.02em;margin:0 0 12px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sub{color:var(--mute);max-width:36em;margin:0 0 32px}
+details.case{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:20px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:center;padding:20px}
+summary::-webkit-details-marker{display:none}
+.cover{height:130px;border-radius:12px;display:flex;align-items:center;justify-content:center;font:800 44px var(--d);color:#fff}
+.t{font:800 26px/1.1 var(--d);margin:0 0 6px}.meta{color:var(--mute);font-size:16px;margin:0}
+.plus{font:700 30px var(--d);transition:transform .2s}details[open] .plus{transform:rotate(45deg)}
+.body{padding:8px 28px 32px;display:grid;grid-template-columns:200px 1fr;gap:0 24px;border-top:1px solid var(--line)}
+.body h3{font:700 17px var(--d);margin:24px 0 0;color:var(--acc)}.body p{margin:24px 0 0;max-width:38em}
+.sw{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}.sw i{width:64px;height:64px;border-radius:50%;border:1px solid var(--line)}
+.stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px}.stats b{display:block;font:800 36px var(--d)}.stats span{font-size:15px;color:var(--mute)}
+.ph{border:2px dashed var(--line);border-radius:12px;min-height:150px;margin-top:24px;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:15px;text-align:center;padding:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}.card h3{font:700 20px var(--d);margin:0 0 6px}.card p{margin:0;font-size:17px;color:var(--mute)}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+ol.steps li{counter-increment:s;border-top:4px solid var(--acc);padding-top:12px;font-size:17px;color:var(--mute)}
+ol.steps li b{display:block;font:700 19px var(--d);color:var(--ink)}ol.steps li b::before{content:counter(s) ". "}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:40px}.pic{aspect-ratio:4/5;background:var(--sun);border-radius:200px 200px 16px 16px;display:flex;align-items:center;justify-content:center;color:#1a1d29;font:700 15px var(--d);text-align:center;padding:20px}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:48px;margin:20px 0 40px}
+.contact h2{margin-bottom:16px}.contact .btn{background:var(--sun);color:#1a1d29}
+footer{padding:0 0 32px;color:var(--mute);font-size:15px}
+@media(max-width:760px){.hero,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}ol.steps{grid-template-columns:1fr 1fr}
+summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{grid-template-columns:1fr}.body h3{margin-top:24px}.body p{margin-top:6px}.contact{padding:28px}.btn.alt{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.shot{margin-top:24px}.shot img{display:block;width:100%;max-width:340px;height:auto;border-radius:12px;border:1px solid var(--line)}
+.pic{overflow:hidden;padding:0}.pic img{display:block;width:100%;height:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+
+<div class="hero" id="top">
+ <div>
+  <h1>Brands people recognise and remember.</h1>
+  <p class="lead">I’m Oghenero Okikie, a brand and graphic designer. I build identities, campaign visuals and design systems that help businesses look as good as they are. Below are three projects, each told from brief to result.</p>
+  <a class="btn" href="#work">See case studies</a><a class="btn alt" href="#contact">Start a project</a>
+ </div>
+ <svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Logo construction grid with a circle, square and curve">
+  <g fill="none" stroke="currentColor" stroke-opacity=".25"><rect x="10" y="10" width="280" height="280"/><path d="M150 10v280M10 150h280M10 10l280 280M290 10 10 290"/><circle cx="150" cy="150" r="140"/></g>
+  <circle cx="110" cy="150" r="78" fill="var(--acc)"/><rect x="120" y="72" width="156" height="156" rx="8" fill="var(--sun)" style="mix-blend-mode:multiply"/>
+  <path d="M110 228a78 78 0 0 1 0-156" fill="none" stroke="var(--ink)" stroke-width="6"/>
+ </svg>
+</div>
+
+<section id="work">
+ <h2>Selected case studies</h2>
+ <p class="sub">Each one follows the same path: the problem, what I found, what I made, and what changed for the client.</p>
+
+ <details class="case" open>
+  <summary><div class="cover" style="background:#f98566;color:#fff2d8">Bd</div><div><p class="t">Birthday Design for Dolapo Asimolowo</p><p class="meta">Personal design · 2026 · Editorial typography, portrait design, personal branding</p></div><span class="plus" aria-hidden="true">+</span></summary>
+  <div class="body">
+   <h3>The brief</h3><p>A birthday graphic for Dolapo Asimolowo that celebrates her as a person, not as a template. It needed to carry a heartfelt prayer message and a sign-off, yet keep her portrait as the centrepiece.</p>
+   <h3>The challenge</h3><p>Most birthday graphics follow one formula: a cutout, a few balloons and a “Happy Birthday” banner. I wanted something closer to a magazine cover, where typography, colour and photography share the page without competing, and the subject still feels like the star.</p>
+   <h3>What I made</h3><p>A warm coral background sets a celebratory mood and lets her deep red outfit stand out as the focal point. I paired expressive script lettering for her name with heavy geometric display type for “Birthday”, so the design feels both personal and bold. A cream frame behind the title and cropped geometric shapes at the edge add structure and depth, and her earring overlaps the frame to layer the portrait into the typography. The prayer message is set in small, widely spaced capitals as a quiet editorial detail, with the sign-off in script above it.</p>
+   <h3>The work</h3>
+   <div><div class="shot"><img src="images/birthday-design.jpg" alt="Birthday design with a woman in a deep red blazer on a coral background, cream script lettering of her name, a framed Happy Birthday title in bold geometric type, and a small birthday prayer message" width="720" height="960"></div>
+   <div class="sw"><i style="background:#f98566"></i><i style="background:#c8202b"></i><i style="background:#fff2d8"></i></div></div>
+   <h3>The result</h3>
+   <p>[Add the recipient’s reaction, how many people shared or commented, or whether she used it as her profile image.]</p>
+  </div>
+ </details>
+
+ <details class="case">
+  <summary><div class="cover" style="background:#1f4fb8">3.0</div><div><p class="t">The Elevation Church: Business Fair 2026</p><p class="meta">The Elevation Church, Ikorodu West · Community event · 2026 · Event flyer, social promotion</p></div><span class="plus" aria-hidden="true">+</span></summary>
+  <div class="body">
+   <h3>The brief</h3><p>The Elevation Church, Ikorodu West needed a flyer for Business Fair 2026, the third edition of its community business fair. It had to stop people scrolling, say “this is about business and opportunity” at a glance, and make the date, time and venue easy to find. It also had to sit comfortably beside the church’s identity.</p>
+   <h3>The challenge</h3><p>An event flyer gets a few seconds of attention on a phone screen, usually shared on WhatsApp or Instagram. The event name and theme had to register first, and the practical details second, without the two competing.</p>
+   <h3>What I made</h3><p>The title leads: heavy, tilted type with red and grey outlines, readable against the sky. A blue and lime market stall carries the theme without a word of explanation, and the “3.0” badge signals a growing event. Date, time and venue sit together at the bottom on signboard shapes, so they scan in seconds. The church logo stays at the top, while the vibrant palette gives the event its own personality.</p>
+   <h3>The work</h3>
+   <div><div class="shot"><img src="images/business-fair-2026.jpg" alt="Business Fair 2026 flyer for The Elevation Church, Ikorodu West: a blue and lime market stall on grass under a blue sky, with the date 29th November 2026, time 9am prompt, and the venue at Pistis Hub, Ikorodu West" width="720" height="960"></div>
+   <div class="sw"><i style="background:#2f9be8"></i><i style="background:#84c61f"></i><i style="background:#1f4fb8"></i><i style="background:#f1352b"></i><i style="background:#7a1f4b"></i></div></div>
+   <h3>The result</h3>
+   <div><div class="stats"><div><b>[00]</b><span>[Vendors registered]</span></div><div><b>[00]</b><span>[Attendance]</span></div><div><b>[00]</b><span>[Reach or shares]</span></div></div><p>[Add a line from church leadership or a vendor about the event, or how the flyer was used across channels.]</p></div>
+  </div>
+ </details>
+
+ <details class="case">
+  <summary><div class="cover" style="background:#f3f20f;color:#1a1d29">Sp</div><div><p class="t">SURGE Picnic Experience</p><p class="meta">SURGE Ikorodu · The Elevation Church, Ikorodu West · Ticketed event · 2026 · Event flyer, ticket promotion</p></div><span class="plus" aria-hidden="true">+</span></summary>
+  <div class="body">
+   <h3>The brief</h3><p>SURGE Ikorodu was hosting an outdoor picnic with a sip and paint side attraction, and needed a flyer that would sell tickets. It had to feel social, creative and youthful, and it had to carry two ticket tiers, the venue, the date and a way to buy.</p>
+   <h3>The challenge</h3><p>A lot of information had to fit on one image without looking like a notice board: two logos, a special attraction, two prices, a QR code, and the date, venue and time. The mood also mattered. People buy a ticket to an experience, so the flyer had to show them the afternoon before it told them the details.</p>
+   <h3>What I made</h3><p>The event name is stacked in oversized condensed type, with “PICNIC” in neon yellow as the loudest element. A bright cyan sky sets the mood and keeps the yellow vivid. Lifestyle photography of friends sharing drinks and painting by the water shows the atmosphere and the sip and paint hook at once. The prices are styled as ticket stubs, and the QR code is labelled “Get tickets” so the next step is obvious. Both the church and SURGE logos sit at the top, side by side.</p>
+   <h3>The work</h3>
+   <div><div class="shot"><img src="images/surge-picnic.jpg" alt="SURGE Picnic Experience flyer: large white and neon yellow lettering over a bright blue sky, a group of friends having drinks and painting by the water, with date Saturday 26 December 2026, venue Ebute Ferry Terminal, time 2pm prompt, ticket prices of 5,000 and 10,000 naira, and a QR code" width="720" height="960"></div>
+   <div class="sw"><i style="background:#36b8e8"></i><i style="background:#f3f20f"></i><i style="background:#ffffff"></i><i style="background:#9bc36b"></i><i style="background:#1a1d29"></i></div></div>
+   <h3>The result</h3>
+   <div><div class="stats"><div><b>[00]</b><span>[Tickets sold]</span></div><div><b>[00]</b><span>[Attendance]</span></div><div><b>[00]</b><span>[Reach or QR scans]</span></div></div><p>[Add a line from the organisers, or how the flyer was used across channels.]</p></div>
+  </div>
+ </details>
+</section>
+
+<section id="services">
+ <h2>What I do</h2>
+ <p class="sub">Clear services help the right clients self-select.</p>
+ <div class="grid">
+  <div class="card"><h3>Brand identity</h3><p>Strategy, logos, colour, type, voice and guidelines.</p></div>
+  <div class="card"><h3>Graphic design</h3><p>Campaigns, social, print, packaging, decks and editorial.</p></div>
+  <div class="card"><h3>Design systems</h3><p>Templates and rules so your team stays consistent without me.</p></div>
+ </div>
+</section>
+
+<section id="process">
+ <h2>How we work together</h2>
+ <p class="sub">A predictable process builds trust before the first call.</p>
+ <ol class="steps">
+  <li><b>Discover</b>Interviews, audit and a written brief you approve.</li>
+  <li><b>Define</b>Positioning, audience and a creative direction.</li>
+  <li><b>Design</b>Concepts, two rounds of revisions, a final system.</li>
+  <li><b>Deliver</b>Files, guidelines and a handover session.</li>
+ </ol>
+</section>
+
+<section id="about">
+ <div class="about">
+  <div class="pic"><img src="images/portrait.jpg" alt="Portrait of Oghenero Okikie" width="640" height="800"></div>
+  <div><h2>About me</h2>
+  <p>Commercially driven brand and communications leader with 10+ years’ experience building, positioning, and scaling brands in complex, highly regulated environments. Track record of designing integrated brand strategies, leading data-driven marketing campaigns, and managing cross-functional and agency teams to deliver measurable growth in engagement, visibility, and market impact. Skilled at translating commercial objectives into digital-first campaigns and turning performance data into executive-ready insight.</p>
+  <p>Tools: Photoshop, Illustrator, After Effects, Figma, Canva, WordPress.</p></div>
+ </div>
+</section>
+
+<div class="contact" id="contact">
+ <h2>Have a brand that needs to stand out?</h2>
+ <p>Tell me about the project, timeline and budget. I reply within two working days.</p>
+ <a class="btn" href="mailto:okikieoghenero@gmail.com">Email okikieoghenero@gmail.com</a>
+</div>
+<footer>© 2026 Oghenero Okikie</footer>
+</div>
+</body>
+</html>
