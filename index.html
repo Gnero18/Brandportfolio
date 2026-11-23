@@ -51,16 +51,29 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .shot{margin-top:24px}.shot img{display:block;width:100%;max-width:340px;height:auto;border-radius:12px;border:1px solid var(--line)}
 .pic{overflow:hidden;padding:0}.pic img{display:block;width:100%;height:100%;object-fit:cover}
+.pdfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;align-items:stretch}
+.pdfcard{display:flex;flex-direction:column;align-items:flex-start}
+.pdfcard .tag{font:700 13px var(--d);color:var(--acc);text-transform:uppercase;letter-spacing:.06em;margin:0 0 8px}
+.pdfcard h3{margin:0 0 6px}.pdfcard p:not(.tag){margin:0 0 20px}
+.pdfcard.on{border-color:var(--acc)}
+.pdfbtn{margin-top:auto;border:0;cursor:pointer}
+.pdfbtn[aria-expanded="true"]{background:var(--ink);color:var(--bg)}
+.pdfview{margin-top:28px;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px;scroll-margin-top:16px}
+.pbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;font:700 17px var(--d)}
+.pclose{margin:0;padding:8px 18px;font-size:14px;cursor:pointer}
+.ppages{display:grid;gap:14px;max-width:900px;margin:0 auto}
+.ppage{display:block;width:100%;height:auto;background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.pmsg{margin:8px;color:var(--mute);font-size:17px}.pmsg code{font-size:15px;background:var(--bg);padding:2px 6px;border-radius:4px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#full">Full case studies</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
 
 <div class="hero" id="top">
  <div>
   <h1>Brands people recognise and remember.</h1>
-  <p class="lead">I’m Oghenero Okikie, a brand and creative graphic designer. I build identities, campaign visuals and design systems that help businesses look as good as they are. Below are three projects, each told from brief to result.</p>
+  <p class="lead">I’m Oghenero Okikie, a brand and creative graphic designer. I build identities, campaign visuals and design systems that help businesses look as good as they are. Below are four projects, each told from brief to result.</p>
   <a class="btn" href="#work">See case studies</a><a class="btn alt" href="#contact">Start a project</a>
  </div>
  <svg class="mark" viewBox="0 0 300 300" role="img" aria-label="Logo construction grid with a circle, square and curve">
@@ -79,13 +92,10 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
   <div class="body">
    <h3>The brief</h3><p>Design a 1080 × 1350 px flyer for a Lagos pop-up market where shoppers can discover fashion, accessories and home décor from local brands. The flyer needed to work on Instagram and WhatsApp, with the date, venue, time and free entry easy to find.</p>
    <h3>The challenge</h3><p>My first version used a playful illustration of a food stall. It captured the energy of a weekend market, but the products told a different story from the flyer copy. The challenge was to keep that energy while showing shoppers what they could actually expect to find.</p>
-   <h3>What I made</h3><p>For this concept project, I designed a flyer for a Lagos pop-up market showcasing fashion, accessories and home décor from local brands.
-
-I used a striped awning to frame the vendor stall and give the flyer the feel of a market storefront. The Ankara pieces, beaded jewellery and woven baskets give shoppers a preview of what they might find, while the bold title and Free Entry badge make the essentials easy to spot in a social feed.</p>
+   <h3>What I made</h3><p>For this concept project, I designed a flyer for a Lagos pop-up market showcasing fashion, accessories and home décor from local brands. I used a striped awning to frame the vendor stall and give the flyer the feel of a market storefront. The Ankara pieces, beaded jewellery and woven baskets give shoppers a preview of what they might find, while the bold title and Free Entry badge make the essentials easy to spot in a social feed.</p>
    <h3>The work</h3>
    <div><div class="shot"><img src="images/tsm.png" alt="The Saturday Market | Flyer Design" width="1080" height="1350"></div>
    <div class="sw"><i style="background:#f6e8d8"></i><i style="background:#056608"></i><i style="background:#e2725b"></i></div></div>
-   
   </div>
  </details>
  <details class="case" open>
@@ -127,19 +137,24 @@ I used a striped awning to frame the vendor stall and give the flyer the feel of
   </div>
  </details>
 </section>
+
+<section id="full">
+ <h2>Full case studies</h2>
+ <p class="sub">See a detailed presentation of each project. Pages open right here, no download needed.</p>
+ <div class="pdfgrid">
+  <div class="card pdfcard"><p class="tag">Flyer design</p><h3>The Saturday Market</h3><p>Concept flyer for a Lagos pop-up market.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/saturday-market.pdf" data-title="The Saturday Market">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Editorial typography</p><h3>Birthday Design</h3><p>A magazine-style portrait birthday graphic.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/birthday-design.pdf" data-title="Birthday Design">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Community event</p><h3>Business Fair 2026</h3><p>Event flyer for The Elevation Church, Ikorodu West.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/business-fair-2026.pdf" data-title="Business Fair 2026">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Ticket promotion</p><h3>SURGE Picnic</h3><p>Flyer designed to sell tickets for an outdoor event.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/surge-picnic.pdf" data-title="SURGE Picnic">View case study</button></div>
+ </div>
+ <div class="pdfview" id="pdfview" hidden>
+  <div class="pbar"><span id="ptitle"></span><button class="btn alt pclose" id="pclose" type="button">Close</button></div>
+  <div class="ppages" id="ppages"></div>
+ </div>
+</section>
+
 <section id="services">
- <h2>Full Case Study</h2>
- <p class="sub"> See a detailed presentation of some of my work.</p>
- <div class="grid">
-  <div class="pdfbox" data-pdf="pdfs/business-fair-2026.pdf"><button class="btn pdfbtn" type="button" aria-expanded="false">View full case study</button><div class="pdfview" hidden></div></div>
-  </div>
- <div class="pdfbox" data-pdf="pdfs/business-fair-2026.pdf"><button class="btn pdfbtn" type="button" aria-expanded="false">View full case study</button><div class="pdfview" hidden></div></div>
-  </div>
- <div class="pdfbox" data-pdf="pdfs/business-fair-2026.pdf"><button class="btn pdfbtn" type="button" aria-expanded="false">View full case study</button><div class="pdfview" hidden></div></div>
-  </div>
- <div class="pdfbox" data-pdf="pdfs/business-fair-2026.pdf"><button class="btn pdfbtn" type="button" aria-expanded="false">View full case study</button><div class="pdfview" hidden></div></div>
-  </div>
- <h2>What I do</h2>
+<h2>What I do</h2>
  <p class="sub">Clear services help the right clients self-select.</p>
  <div class="grid">
   <div class="card"><h3>Brand identity</h3><p>Strategy, logos, colour, type, voice and guidelines.</p></div>
@@ -175,5 +190,75 @@ I used a striped awning to frame the vendor stall and give the flyer the feel of
 </div>
 <footer>© 2026 Oghenero Okikie</footer>
 </div>
+<script>
+(function(){
+var LIB='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+var WORKER='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+var loading,io,token=0,activeBtn=null;
+var view=document.getElementById('pdfview'),pages=document.getElementById('ppages'),title=document.getElementById('ptitle');
+function loadLib(){
+  if(window.pdfjsLib) return Promise.resolve();
+  if(!loading){loading=new Promise(function(res,rej){
+    var el=document.createElement('script');el.src=LIB;
+    el.onload=function(){pdfjsLib.GlobalWorkerOptions.workerSrc=WORKER;res();};
+    el.onerror=rej;document.head.appendChild(el);});}
+  return loading;
+}
+async function draw(pdf,n,canvas){
+  var page=await pdf.getPage(n);
+  var base=page.getViewport({scale:1});
+  var scale=((canvas.clientWidth||800)/base.width)*Math.min(window.devicePixelRatio||1,2);
+  var vp=page.getViewport({scale:scale});
+  canvas.width=vp.width;canvas.height=vp.height;
+  await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;
+  canvas.style.aspectRatio='auto';
+}
+async function render(url,my){
+  pages.innerHTML='<p class="pmsg">Loading…</p>';
+  try{
+    await loadLib();
+    var pdf=await pdfjsLib.getDocument(url).promise;
+    if(my!==token) return;
+    var first=await pdf.getPage(1),v=first.getViewport({scale:1});
+    pages.innerHTML='';
+    var slots=[];
+    for(var i=1;i<=pdf.numPages;i++){
+      var c=document.createElement('canvas');c.className='ppage';
+      c.setAttribute('role','img');c.setAttribute('aria-label','Page '+i+' of '+pdf.numPages);
+      c.style.aspectRatio=v.width+' / '+v.height;
+      pages.appendChild(c);slots.push(c);
+    }
+    if(io) io.disconnect();
+    io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){io.unobserve(e.target);draw(pdf,slots.indexOf(e.target)+1,e.target);}
+      });
+    },{rootMargin:'800px'});
+    slots.forEach(function(c){io.observe(c);});
+  }catch(err){
+    if(my===token) pages.innerHTML='<p class="pmsg">This case study is not available yet. Add the PDF at <code>'+url+'</code>.</p>';
+  }
+}
+function close(){
+  token++;view.hidden=true;pages.innerHTML='';
+  if(io) io.disconnect();
+  document.querySelectorAll('.pdfbtn').forEach(function(b){b.setAttribute('aria-expanded','false');b.textContent='View case study';b.closest('.pdfcard').classList.remove('on');});
+  activeBtn=null;
+}
+document.querySelectorAll('.pdfbtn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    if(activeBtn===btn){close();return;}
+    close();
+    activeBtn=btn;
+    btn.setAttribute('aria-expanded','true');btn.textContent='Close';btn.closest('.pdfcard').classList.add('on');
+    title.textContent=btn.getAttribute('data-title');
+    view.hidden=false;
+    render(btn.getAttribute('data-pdf'),++token);
+    view.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+document.getElementById('pclose').addEventListener('click',close);
+})();
+</script>
 </body>
 </html>
