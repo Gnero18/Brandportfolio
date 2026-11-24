@@ -64,11 +64,18 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
 .ppages{display:grid;gap:14px;max-width:900px;margin:0 auto}
 .ppage{display:block;width:100%;height:auto;background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
 .pmsg{margin:8px;color:var(--mute);font-size:17px}.pmsg code{font-size:15px;background:var(--bg);padding:2px 6px;border-radius:4px}
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.vid{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.vframe{position:relative;aspect-ratio:16/9;background:#000}
+.vframe img,.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vplay{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;border:0;background:var(--acc);color:var(--acc-ink);font-size:26px;cursor:pointer;padding-left:4px}
+.vplay:hover{transform:scale(1.08)}.vbad{display:flex;align-items:center;justify-content:center;color:#fff;font:700 15px var(--d);text-align:center;padding:12px}
+.vid h3{font:700 20px var(--d);margin:16px 18px 4px}.vid p{margin:0 18px 18px;color:var(--mute);font-size:17px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#full">Full case studies</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#full">Full case studies</a><a href="#videos">Videos</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
 
 <div class="hero" id="top">
  <div>
@@ -84,7 +91,7 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
 </div>
 
 <section id="work">
- <h2>Still Graphic case studies</h2>
+ <h2>Graphic case studies</h2>
  <p class="sub">Each one follows the same path: the problem, what I found, what I made, and what changed for the client.</p>
 
  <details class="case" open>
@@ -143,13 +150,23 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
  <p class="sub">See a detailed presentation of each project. Pages open right here, no download needed.</p>
  <div class="pdfgrid">
   <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>The Saturday Market</h3><p>Concept branding for a Lagos pop-up market.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/The Saturday Market Logo.pdf" data-title="The Saturday Market">View case study</button></div>
-  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>AgricPro Seyio</h3><p>A Brand Guildline for AgriPro Seyio.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/AGRIC PRO SEYIO.pdf" data-title="Agric Pro Seyio">View case study</button></div>
-  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>eSusFarm</h3><p>Logo, colour and typography for eSusFarm.Version 1.0..</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/eSusFarm_Brand_Guide.pdf" data-title="eSusFarm">View case study</button></div>
-  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>Agro Moore</h3><p>Logo, colour and typography for Agro Moore.Version 1.0.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/Agro_Moore_Brand_Guide.pdf" data-title="Agro Moore">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>AgricPro Seyio</h3><p>A brand guideline for AgricPro Seyio.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/AGRIC PRO SEYIO.pdf" data-title="Agric Pro Seyio">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>eSusFarm</h3><p>Logo, colour and typography for eSusFarm. Version 1.0.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/eSusFarm_Brand_Guide.pdf" data-title="eSusFarm">View case study</button></div>
+  <div class="card pdfcard"><p class="tag">Logo and brand design</p><h3>Agro Moore</h3><p>Logo, colour and typography for Agro Moore. Version 1.0.</p><button class="btn pdfbtn" type="button" aria-expanded="false" data-pdf="pdfs/Agro_Moore_Brand_Guide.pdf" data-title="Agro Moore">View case study</button></div>
  </div>
  <div class="pdfview" id="pdfview" hidden>
   <div class="pbar"><span id="ptitle"></span><button class="btn alt pclose" id="pclose" type="button">Close</button></div>
   <div class="ppages" id="ppages"></div>
+ </div>
+</section>
+
+<section id="videos">
+ <h2>Videos</h2>
+ <p class="sub">Watch my video and motion work right here.</p>
+ <div class="vidgrid">
+  <div class="vid"><div class="vframe" data-yt="PASTE YOUTUBE LINK HERE"><img alt="" loading="lazy"><button class="vplay" type="button" aria-label="Play video">▶</button></div><h3>Video title</h3><p>One line about the project.</p></div>
+  <div class="vid"><div class="vframe" data-yt="PASTE YOUTUBE LINK HERE"><img alt="" loading="lazy"><button class="vplay" type="button" aria-label="Play video">▶</button></div><h3>Video title</h3><p>One line about the project.</p></div>
+  <div class="vid"><div class="vframe" data-yt="PASTE YOUTUBE LINK HERE"><img alt="" loading="lazy"><button class="vplay" type="button" aria-label="Play video">▶</button></div><h3>Video title</h3><p>One line about the project.</p></div>
  </div>
 </section>
 
@@ -261,6 +278,16 @@ document.querySelectorAll('.pdfbtn').forEach(function(btn){
 });
 document.getElementById('pclose').addEventListener('click',close);
 })();
+</script>
+<script>
+document.querySelectorAll('.vframe').forEach(function(f){
+  var m=(f.getAttribute('data-yt')||'').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/);
+  if(!m){f.className+=' vbad';f.textContent='Add a valid YouTube link';return;}
+  var id=m[1];f.querySelector('img').src='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
+  f.querySelector('.vplay').addEventListener('click',function(){
+    f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="YouTube video player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+});
 </script>
 </body>
 </html>
