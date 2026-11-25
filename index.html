@@ -71,11 +71,19 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
 .vplay{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;border:0;background:var(--acc);color:var(--acc-ink);font-size:26px;cursor:pointer;padding-left:4px}
 .vplay:hover{transform:scale(1.08)}.vbad{display:flex;align-items:center;justify-content:center;color:#fff;font:700 15px var(--d);text-align:center;padding:12px}
 .vid h3{font:700 20px var(--d);margin:16px 18px 4px}.vid p{margin:0 18px 18px;color:var(--mute);font-size:17px}
+.pinwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;min-height:120px;overflow:hidden}
+.marquee{overflow:hidden;border-radius:16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mtrack{display:flex;gap:16px;width:max-content;animation:mscroll 40s linear infinite}
+.marquee:hover .mtrack,.marquee:focus-within .mtrack{animation-play-state:paused}
+.mtrack img{flex:none;height:380px;width:auto;border-radius:14px;border:1px solid var(--line);display:block}
+@keyframes mscroll{to{transform:translateX(-50%)}}
+@media(max-width:760px){.mtrack img{height:260px}}
+@media(prefers-reduced-motion:reduce){.mtrack{animation:none}.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><a href="#top">Oghenero Okikie</a><nav><a href="#work">Work</a><a href="#full">Full case studies</a><a href="#videos">Videos</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<header><a href="#top">Oghenero Okikie</a><nav><a href="#gallery">Gallery</a><a href="#work">Work</a><a href="#full">Full case studies</a><a href="#videos">Videos</a><a href="#pinterest">Pinterest</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
 
 <div class="hero" id="top">
  <div>
@@ -89,6 +97,17 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
   <path d="M110 228a78 78 0 0 1 0-156" fill="none" stroke="var(--ink)" stroke-width="6"/>
  </svg>
 </div>
+
+<section id="gallery">
+ <h2>Gallery</h2>
+ <p class="sub">A moving look at recent work. Hover or touch to pause.</p>
+ <div class="marquee" aria-label="Gallery of my work"><div class="mtrack">
+  <img src="images/tsm.png" alt="The Saturday Market flyer design">
+  <img src="images/birthday-design.jpg" alt="Birthday design with editorial typography">
+  <img src="images/business-fair-2026.jpg" alt="Business Fair 2026 flyer for The Elevation Church">
+  <img src="images/surge-picnic.jpg" alt="SURGE Picnic Experience flyer">
+ </div></div>
+</section>
 
 <section id="work">
  <h2>Graphic case studies</h2>
@@ -168,6 +187,13 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
   <div class="vid"><div class="vframe" data-yt="PASTE YOUTUBE LINK HERE"><img alt="" loading="lazy"><button class="vplay" type="button" aria-label="Play video">▶</button></div><h3>Video title</h3><p>One line about the project.</p></div>
   <div class="vid"><div class="vframe" data-yt="PASTE YOUTUBE LINK HERE"><img alt="" loading="lazy"><button class="vplay" type="button" aria-label="Play video">▶</button></div><h3>Video title</h3><p>One line about the project.</p></div>
  </div>
+</section>
+
+<section id="pinterest">
+ <h2>Pinterest</h2>
+ <p class="sub">Browse my inspiration and design boards. Scroll inside the gallery to see more.</p>
+ <div class="pinwrap" id="pinwrap" data-board="PASTE PINTEREST BOARD URL HERE"></div>
+ <p style="margin-top:20px"><a class="btn alt" id="pinlink" style="margin-left:0" href="https://www.pinterest.com/okikieoghenero" target="_blank" rel="noopener">View full board on Pinterest</a></p>
 </section>
 
 <section id="services">
@@ -288,6 +314,28 @@ document.querySelectorAll('.vframe').forEach(function(f){
     f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="YouTube video player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
   });
 });
+</script>
+<script>
+(function(){
+var w=document.getElementById('pinwrap');if(!w)return;
+var url=(w.getAttribute('data-board')||'').trim(),seg=[];
+try{var u=new URL(url);if(/(^|\.)pinterest\.[a-z.]+$/i.test(u.hostname))seg=u.pathname.split('/').filter(Boolean);}catch(e){}
+if(seg.length<1||seg[0]==='pin'){w.innerHTML='<p class="pmsg">Add your Pinterest board link in this section. It looks like https://www.pinterest.com/username/board-name/</p>';return;}
+document.getElementById('pinlink').href=url;
+var a=document.createElement('a');
+a.setAttribute('data-pin-do',seg.length>1?'embedBoard':'embedUser');
+a.setAttribute('data-pin-scale-width','236');a.setAttribute('data-pin-scale-height','900');
+a.href=url;w.innerHTML='';w.appendChild(a);
+var s=document.createElement('script');s.async=true;s.src='https://assets.pinterest.com/js/pinit.js';document.body.appendChild(s);
+})();
+</script>
+<script>
+(function(){
+var t=document.querySelector('.mtrack');if(!t)return;
+var n=t.children.length;
+Array.prototype.slice.call(t.children).forEach(function(im){var c=im.cloneNode(true);c.alt='';c.setAttribute('aria-hidden','true');t.appendChild(c);});
+t.style.animationDuration=(n*9)+'s';
+})();
 </script>
 </body>
 </html>
