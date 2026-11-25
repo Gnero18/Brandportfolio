@@ -192,8 +192,8 @@ summary{grid-template-columns:1fr auto}.cover{grid-column:1/-1;order:-1}.body{gr
 <section id="pinterest">
  <h2>Pinterest</h2>
  <p class="sub">Browse my inspiration and design boards. Scroll inside the gallery to see more.</p>
- <div class="pinwrap" id="pinwrap" data-board="PASTE PINTEREST URL HERE"></div>
- <p style="margin-top:20px"><a class="btn alt" id="pinlink" style="margin-left:0" href="https://www.pinterest.com/okikieoghenero/" target="_blank" rel="noopener">View full board on Pinterest</a></p>
+ <div class="pinwrap" id="pinwrap" data-board="PASTE PINTEREST BOARD URL HERE"></div>
+ <p style="margin-top:20px"><a class="btn alt" id="pinlink" style="margin-left:0" href="https://www.pinterest.com/okikieoghenero" target="_blank" rel="noopener">View full board on Pinterest</a></p>
 </section>
 
 <section id="services">
@@ -331,10 +331,34 @@ var s=document.createElement('script');s.async=true;s.src='https://assets.pinter
 </script>
 <script>
 (function(){
+/* ===== Gallery settings. Leave USER and REPO empty on github.io; the site works them out itself. ===== */
+var FOLDER='gallery', USER='', REPO='', BRANCH='';
 var t=document.querySelector('.mtrack');if(!t)return;
-var n=t.children.length;
-Array.prototype.slice.call(t.children).forEach(function(im){var c=im.cloneNode(true);c.alt='';c.setAttribute('aria-hidden','true');t.appendChild(c);});
-t.style.animationDuration=(n*9)+'s';
+var fallback=Array.prototype.slice.call(t.children).map(function(im){return {src:im.getAttribute('src'),alt:im.getAttribute('alt')||''};});
+function render(items){
+  t.innerHTML='';
+  items.forEach(function(it){var im=document.createElement('img');im.src=it.src;im.alt=it.alt;im.decoding='async';t.appendChild(im);});
+  Array.prototype.slice.call(t.children).forEach(function(im){var c=im.cloneNode(true);c.alt='';c.setAttribute('aria-hidden','true');t.appendChild(c);});
+  t.style.animation='none';void t.offsetWidth;t.style.animation='';
+  t.style.animationDuration=Math.max(20,items.length*9)+'s';
+}
+render(fallback);
+var h=location.hostname,seg=location.pathname.split('/')[1]||'';
+if(!USER&&/\.github\.io$/i.test(h)){USER=h.split('.')[0];}
+if(!REPO&&USER){REPO=(seg&&!/\./.test(seg))?seg:USER+'.github.io';}
+if(!USER||!REPO)return;
+var api='https://api.github.com/repos/'+USER+'/'+REPO+'/contents/'+FOLDER+(BRANCH?'?ref='+encodeURIComponent(BRANCH):'');
+var key='gal:'+api,cached=null;
+try{cached=JSON.parse(sessionStorage.getItem(key)||'null');}catch(e){}
+if(cached&&cached.length){render(cached);return;}
+fetch(api).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(list){
+  var files=list.filter(function(f){return f.type==='file'&&/\.(png|jpe?g|gif|webp|avif|svg)$/i.test(f.name);})
+    .sort(function(a,b){return a.name.localeCompare(b.name,undefined,{numeric:true});})
+    .map(function(f){return {src:FOLDER+'/'+encodeURIComponent(f.name),alt:f.name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ')};});
+  if(!files.length)return;
+  try{sessionStorage.setItem(key,JSON.stringify(files));}catch(e){}
+  render(files);
+}).catch(function(){});
 })();
 </script>
 </body>
